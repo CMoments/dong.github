@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/dong.github/img/youtiao.png">
+  <link rel="icon" href="/dong.github/img/youtiao.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Dong">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="php伪协议整理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php伪协议">
+<meta property="og:url" content="https://cmoments.github.io/dong.github/2024/09/01/fakeprotocol/index.html">
+<meta property="og:site_name" content="江安老油条">
+<meta property="og:description" content="php伪协议整理。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0901-3.png">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0901-4.png">
+<meta property="article:published_time" content="2024-09-01T11:26:50.000Z">
+<meta property="article:modified_time" content="2024-09-07T07:32:58.771Z">
+<meta property="article:author" content="Dong">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cmoments.github.io/dong.github/images/0901-3.png">
+  
+  
+  
+  <title>php伪协议 - 江安老油条</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/dong.github/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/dong.github/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/dong.github/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cmoments.github.io","root":"/dong.github/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/dong.github/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/dong.github/js/utils.js" ></script>
+  <script  src="/dong.github/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/dong.github/">
+      <strong>江安老油条</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>回忆</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/dong.github/img/banner-1.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="php伪协议"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-01 19:26" pubdate>
+          September 1, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">php伪协议</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>php伪协议整理。</strong></p>
+<span id="more"></span>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-number">1</span> file:// — 访问本地文件系统<br><span class="hljs-number">2</span> http:// — 访问 <span class="hljs-built_in">HTTP</span>(s) 网址<br><span class="hljs-number">3</span> ftp:// — 访问 <span class="hljs-built_in">FTP</span>(s) URLs<br><span class="hljs-number">4</span> php:// — 访问各个输入/输出流（I/O streams）<br><span class="hljs-number">5</span> zlib:// — 压缩流<br><span class="hljs-number">6</span> data:// — 数据（RFC）<br><span class="hljs-number">7</span> glob:// — 查找匹配的文件路径模式<br><span class="hljs-number">8</span> phar:// — PHP 归档<br><span class="hljs-number">9</span> ssh2:// — Secure Shell <span class="hljs-number">2</span><br><span class="hljs-number">10</span> rar:// — RAR<br><span class="hljs-number">11</span> ogg:// — 音频流<br><span class="hljs-number">12</span> expect:// — 处理交互式的流<br>-----------------------php支持的伪协议-------------------------------------------------------<br></code></pre></td></tr></table></figure>
+
+<p><strong>PHP的伪协议提供了一种灵活且强大的方式来访问和操作各种类型的资源。通过熟练使用这些伪协议，可以在PHP中实现更多高级和有趣的功能，提升开发效率和应用的功能性。无论是处理网络资源，还是进行高效的数据流操作，了解并掌握PHP的伪协议都将是宝贵的技能之一。</strong></p>
+<p><strong>条件：</strong></p>
+<blockquote>
+<ul>
+<li><code>allow_url_fopen</code>:off&#x2F;on</li>
+<li><code>allow_url_include</code> :off</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>php://input  </code></li>
+<li><code>php://stdin  </code></li>
+<li><code>php://memory </code></li>
+<li><code>php://temp </code></li>
+</ul>
+<p> 需要allow_url_include:on</p>
+<h1 id="php"><a href="#php" class="headerlink" title="php:&#x2F;&#x2F;"></a>php:&#x2F;&#x2F;</h1><h2 id="php-filter（用于读取）"><a href="#php-filter（用于读取）" class="headerlink" title="php:&#x2F;&#x2F;filter（用于读取）"></a>php:&#x2F;&#x2F;filter（用于读取）</h2><p>php:&#x2F;&#x2F;filter是一种元封装器，设计用于数据流打开时的筛选过滤使用。</p>
+<p>=&gt;是一个中间件，<strong>在读入或写入数据的时候对数据进行处理后输出</strong></p>
+<blockquote>
+<p><strong>php:filter可以获取指定文件源码。当它与包含函数结合时，php:&#x2F;&#x2F;filter流会被当作php文件执行。</strong></p>
+<p><strong>所以我们一般对其进行编码，让其不执行。从而导致任意文件读取。</strong></p>
+</blockquote>
+<p><strong>协议参数:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>名称</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">resource&#x3D;&lt;要过滤的数据流&gt;</td>
+<td align="left">这个参数是必须的，它指定了要过滤的数据流</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">php://filter/read=convert.base64-encode/resource=index.php<br>php://filter/resource=index.php<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>将index.php通过base64编码后进行输出。这样做的好处就是如果不进行编码，文件包含后就不会有输出结果，而是当做php文件执行了，而通过编码后则可以读取文件源码。</code></p>
+<p><code>而使用的convert.base64-encode，就是一种过滤器。</code></p>
+</blockquote>
+<h2 id="php-input（用于执行）"><a href="#php-input（用于执行）" class="headerlink" title="php:&#x2F;&#x2F;input（用于执行）"></a>php:&#x2F;&#x2F;input（用于执行）</h2><p>可以访问请求的原始数据的只读流，在POST请求中访问POST的<code>data</code>部分，在<code>enctype=&quot;multipart/form-data&quot;</code> 的时候<code>php://input </code>是无效的。</p>
+<h1 id="data-协议"><a href="#data-协议" class="headerlink" title="data:&#x2F;&#x2F;协议"></a>data:&#x2F;&#x2F;协议</h1><p><strong>条件：</strong></p>
+<blockquote>
+<ul>
+<li><code>allow_url_fopen:on</code></li>
+<li><code>allow_url_include :on</code></li>
+</ul>
+</blockquote>
+<p><strong>数据流封装器，以传递相应格式的数据，可以让用户来控制输入流，当它与包含函数结合时，用户输入的data:&#x2F;&#x2F;流会被当作php文件执行。</strong></p>
+<blockquote>
+<ul>
+<li><strong>作用</strong>：自<code>PHP&gt;=5.2.0</code>起，可以使用<code>data://</code>数据流封装器，以传递相应格式的数据。通常可以用来执行PHP代码。</li>
+</ul>
+</blockquote>
+<pre><code class="hljs">data://text/plain,
+data://text/plain;base64,
+</code></pre>
+<h1 id="file-协议"><a href="#file-协议" class="headerlink" title="file:&#x2F;&#x2F;协议"></a>file:&#x2F;&#x2F;协议</h1><p><strong>file:&#x2F;&#x2F; 协议在双off的情况下也可以正常使用；</strong></p>
+<p><strong>allow_url_fopen ：off&#x2F;on</strong></p>
+<p><strong>allow_url_include：off&#x2F;on</strong></p>
+<blockquote>
+<p>file:&#x2F;&#x2F; 用于访问本地文件系统，在CTF中通常用来读取本地文件的且不受allow_url_fopen与allow_url_include的影响</p>
+</blockquote>
+<h1 id="http-https-协议"><a href="#http-https-协议" class="headerlink" title="http:&#x2F;&#x2F;&amp;https:&#x2F;&#x2F;协议"></a>http:&#x2F;&#x2F;&amp;https:&#x2F;&#x2F;协议</h1><p><strong>条件</strong>：</p>
+<blockquote>
+<ul>
+<li><code>allow_url_fopen</code>:on</li>
+<li><code>allow_url_include</code> :on</li>
+</ul>
+</blockquote>
+<ul>
+<li><p><strong>作用</strong>：常规 URL 形式，允许通过 <code>HTTP 1.0</code> 的 GET方法，以只读访问文件或资源。CTF中通常用于远程包含。</p>
+</li>
+<li><p><strong>用法</strong>：</p>
+<pre><code class="hljs">http://example.com
+http://example.com/file.php?var1=val1&amp;var2=val2
+http://user:password@example.com
+https://example.com
+https://example.com/file.php?var1=val1&amp;var2=val2
+https://user:password@example.com
+</code></pre>
+</li>
+</ul>
+<h1 id="phar-协议"><a href="#phar-协议" class="headerlink" title="phar:&#x2F;&#x2F;协议"></a>phar:&#x2F;&#x2F;协议</h1><p>phar:&#x2F;&#x2F;协议类似zip:&#x2F;&#x2F;，同样可以访问zip 格式压缩包内容。</p>
+<p><a target="_blank" rel="noopener" href="https://paper.seebug.org/680/">利用 phar 拓展 php 反序列化漏洞攻击面 (seebug.org)</a></p>
+<h1 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h1><h2 id="2024MoeCTF-ImageCloud前置"><a href="#2024MoeCTF-ImageCloud前置" class="headerlink" title="2024MoeCTF-ImageCloud前置"></a>2024MoeCTF-ImageCloud前置</h2><p><img src="/dong.github/images/0901-3.png" srcset="/dong.github/img/loading.gif" lazyload alt="alt text"><br>看到url?&#x3D;，这是一个典型的URL重定向（URL Redirection）漏洞，推测出题人在考察伪协议。<br>结合题目描述，考虑file:&#x2F;&#x2F;，直接读取本地文件，获取flag。</p>
+<h2 id="2024BaseCTF-Aura酱的礼物"><a href="#2024BaseCTF-Aura酱的礼物" class="headerlink" title="2024BaseCTF-Aura酱的礼物"></a>2024BaseCTF-Aura酱的礼物</h2><p><img src="/dong.github/images/0901-4.png" srcset="/dong.github/img/loading.gif" lazyload alt="alt text"><br>第一个判断，需要把一个文件当作字符串读入，读入后的字符串等于”Aura”<br>想到data:&#x2F;&#x2F;，两种方法：<br>data:&#x2F;&#x2F;text&#x2F;plain,Aura<br>data:&#x2F;&#x2F;text&#x2F;plain;base64,QXVyYQ&#x3D;&#x3D;</p>
+<p>第二个判断，要求页面开头为<code>http://jasmineaura.github.io</code><br>可以利⽤ @ 来进⾏隔断, 将 @ 前⾯的内容当做⽤⼾名,后面变成了需要转到的地址（SSRF漏洞）。</p>
+<p>第三个的话是⼀个 include 点,flag在php文件的注释部分，使用data协议或其他会让flag.php被执行，无法查看注释。<br>这时就需要使用php:&#x2F;&#x2F;filter：<br>php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;flag.php</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/dong.github/categories/Practice/" class="category-chain-item">Practice</a>
+  
+  
+    <span>></span>
+    
+  <a href="/dong.github/categories/Practice/phpfakeprotocol/" class="category-chain-item">phpfakeprotocol</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/dong.github/tags/Web/" class="print-no-link">#Web</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>php伪协议</div>
+      <div>https://cmoments.github.io/dong.github/2024/09/01/fakeprotocol/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Dong</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 1, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/01/sqlinjection/" title="SQL注入">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SQL注入</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/01/phpserilize/" title="php反序列化">
+                        <span class="hidden-mobile">php反序列化</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/dong.github/js/events.js" ></script>
+<script  src="/dong.github/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/dong.github/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/dong.github/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/dong.github/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

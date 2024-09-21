@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/dong.github/img/youtiao.png">
+  <link rel="icon" href="/dong.github/img/youtiao.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Dong">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="优雅地使用Vscode进行C&#x2F;C++编程指南,存储配置文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vscode C&#x2F;C++编程指南">
+<meta property="og:url" content="https://cmoments.github.io/dong.github/2024/09/20/Vscodesolutions/index.html">
+<meta property="og:site_name" content="江安老油条">
+<meta property="og:description" content="优雅地使用Vscode进行C&#x2F;C++编程指南,存储配置文件">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0920-1.png">
+<meta property="og:image" content="https://cmoments.github.io/dong.github/images/0920-2.png">
+<meta property="article:published_time" content="2024-09-20T05:54:57.000Z">
+<meta property="article:modified_time" content="2024-09-20T07:05:22.324Z">
+<meta property="article:author" content="Dong">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cmoments.github.io/dong.github/images/0920-1.png">
+  
+  
+  
+  <title>Vscode C/C++编程指南 - 江安老油条</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/dong.github/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/dong.github/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/dong.github/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cmoments.github.io","root":"/dong.github/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/dong.github/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/dong.github/js/utils.js" ></script>
+  <script  src="/dong.github/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/dong.github/">
+      <strong>江安老油条</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>回忆</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/dong.github/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/dong.github/img/banner-1.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Vscode C/C++编程指南"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-20 13:54" pubdate>
+          September 20, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Vscode C/C++编程指南</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>优雅地使用Vscode进行C&#x2F;C++编程指南,存储配置文件</strong></p>
+<span id="more"></span>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍:"></a>介绍:</h1><p>使用前请根据配置文件下载并将编译器mingw放在合适位置，根据配置文件进行修改和调整。<br>以下配置项目可供C&#x2F;C++单文件程序日常使用。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/dong.github/images/0920-1.png" srcset="/dong.github/img/loading.gif" lazyload alt="配置所需插件"></div><div class="group-image-wrap"><img src="/dong.github/images/0920-2.png" srcset="/dong.github/img/loading.gif" lazyload alt="配置目录结构"></div></div></div>
+<h1 id="配置文件-vscodecpp"><a href="#配置文件-vscodecpp" class="headerlink" title="配置文件(vscodecpp):"></a>配置文件(vscodecpp):</h1>
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-8f7bdefe" role="button" aria-expanded="false" aria-controls="collapse-8f7bdefe">
+        <div class="fold-arrow">▶</div>c_cpp_properties.json
+      </div>
+      <div class="fold-collapse collapse" id="collapse-8f7bdefe">
+        <div class="fold-content">
+          <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;configurations&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>        <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;win&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;includePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;D:/programs/mingw/include&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;defines&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;compilerPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;D:/programs/mingw/bin/g++.exe&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;cStandard&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;c11&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;cppStandard&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;c++11&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;intelliSenseMode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;clang-x64&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-dcdac752" role="button" aria-expanded="false" aria-controls="collapse-dcdac752">
+        <div class="fold-arrow">▶</div>launch.json
+      </div>
+      <div class="fold-collapse collapse" id="collapse-dcdac752">
+        <div class="fold-content">
+          <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md</span><br><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0.2.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;configurations&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>        <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;(gdb) Launch&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 配置名称，将会在启动配置的下拉菜单中显示</span><br>            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cppdbg&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg</span><br>            <span class="hljs-attr">&quot;request&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;launch&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 请求配置类型，可以为launch（启动）或attach（附加）</span><br>            <span class="hljs-attr">&quot;program&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 将要进行调试的程序的路径</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 程序调试时传递给程序的命令行参数，一般设为空即可</span><br>            <span class="hljs-attr">&quot;stopAtEntry&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 设为true时程序将暂停在程序入口处，相当于在main上打断点</span><br>            <span class="hljs-attr">&quot;cwd&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 调试程序时的工作目录，此为工作区文件夹；改成$&#123;fileDirname&#125;可变为文件所在目录</span><br>            <span class="hljs-attr">&quot;environment&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 环境变量</span><br>            <span class="hljs-attr">&quot;externalConsole&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 为true时使用单独的cmd窗口，与其它IDE一致；18年10月后设为false可调用VSC内置终端</span><br>            <span class="hljs-attr">&quot;internalConsoleOptions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;neverOpen&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，你应该不需要对gdb手动输命令吧？</span><br>            <span class="hljs-attr">&quot;MIMode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gdb&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 指定连接的调试器，可以为gdb或lldb。但我没试过lldb</span><br>            <span class="hljs-attr">&quot;miDebuggerPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gdb.exe&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 调试器路径，Windows下后缀不能省略，Linux下则不要</span><br>            <span class="hljs-attr">&quot;setupCommands&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">// 模板自带，好像可以更好地显示STL容器的内容，具体作用自行Google</span><br>                    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Enable pretty-printing for gdb&quot;</span><span class="hljs-punctuation">,</span><br>                    <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;-enable-pretty-printing&quot;</span><span class="hljs-punctuation">,</span><br>                    <span class="hljs-attr">&quot;ignoreFailures&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br>                <span class="hljs-punctuation">&#125;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;preLaunchTask&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Compile&quot;</span> <span class="hljs-comment">// 调试会话开始前执行的任务，一般为编译程序。与tasks.json的label相对应</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-6ae3e036" role="button" aria-expanded="false" aria-controls="collapse-6ae3e036">
+        <div class="fold-arrow">▶</div>settings.json
+      </div>
+      <div class="fold-collapse collapse" id="collapse-6ae3e036">
+        <div class="fold-content">
+          <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;files.defaultLanguage&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// ctrl+N新建文件后默认的语言</span><br>  <span class="hljs-attr">&quot;editor.formatOnType&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 输入分号(C/C++的语句结束标识)后自动格式化当前这一行的代码</span><br>  <span class="hljs-attr">&quot;files.autoSave&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;onFocusChange&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;editor.formatOnSave&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;editor.formatOnPaste&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;editor.acceptSuggestionOnEnter&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 我个人的习惯，按回车时一定是真正的换行，只有tab才会接受Intellisense</span><br>  <span class="hljs-attr">&quot;editor.minimap.enabled&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;C_Cpp.autocomplete&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;default&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;[cpp]&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;editor.quickSuggestions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;comments&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;strings&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;other&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;editor.wordBasedSuggestions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;matchingDocuments&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;editor.formatOnType&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;[c]&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;editor.quickSuggestions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;comments&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;strings&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;other&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;on&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;editor.wordBasedSuggestions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;matchingDocuments&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;editor.formatOnType&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;code-runner.runInTerminal&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 设置成false会在“输出”中输出，无法输入</span><br>  <span class="hljs-attr">&quot;code-runner.executorMap&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-comment">//&quot;c&quot;: &quot;cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=GBK &amp;&amp; $dir$fileNameWithoutExt&quot;,</span><br>    <span class="hljs-comment">//&quot;cpp&quot;: &quot;cd $dir &amp;&amp; g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=UTF-8 &amp;&amp; $dir$fileNameWithoutExt&quot;</span><br>    <span class="hljs-attr">&quot;c&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc -std=c17 -fexec-charset=UTF-8 &amp;&amp; $dir$fileNameWithoutExt&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cpp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;clear &amp;&amp; cd $dir &amp;&amp; g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc -fexec-charset=GBK -std=c++17  &amp;&amp; $dir$fileNameWithoutExt&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 右键run code时运行的命令；未注释的仅适用于PowerShell（Win10默认），文件名中有空格也可以编译运行；注释掉的适用于cmd（win7默认），PS和bash也能用，但文件名中有空格时无法运行</span><br>  <span class="hljs-attr">&quot;code-runner.saveFileBeforeRun&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// run code前保存</span><br>  <span class="hljs-attr">&quot;code-runner.preserveFocus&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false</span><br>  <span class="hljs-attr">&quot;code-runner.clearPreviousOutput&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 每次run code前清空属于code runner的终端消息，默认false</span><br>  <span class="hljs-attr">&quot;code-runner.ignoreSelection&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 默认为false，效果是鼠标选中一块代码后可以单独执行，但C是编译型语言，不适合这样用</span><br>  <span class="hljs-attr">&quot;C_Cpp.clang_format_sortIncludes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;files.associations&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;array&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;atomic&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;*.tcc&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cctype&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;clocale&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cmath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cstdarg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cstddef&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cstdint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cstdio&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cstdlib&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cwchar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;cwctype&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;deque&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;unordered_map&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;vector&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;exception&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;algorithm&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;memory&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;memory_resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;optional&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;string&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;string_view&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;system_error&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;tuple&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;type_traits&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;utility&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;fstream&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;initializer_list&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;iosfwd&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;iostream&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;istream&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;limits&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;new&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;ostream&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;sstream&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;stdexcept&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;streambuf&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;typeinfo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cpp&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">// 格式化时调整include的顺序（按字母排序）</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-9c51fa20" role="button" aria-expanded="false" aria-controls="collapse-9c51fa20">
+        <div class="fold-arrow">▶</div>tasks.json
+      </div>
+      <div class="fold-collapse collapse" id="collapse-9c51fa20">
+        <div class="fold-content">
+          <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.0.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;tasks&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>        <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;label&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Compile&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;g++&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;$&#123;file&#125;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-o&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-g&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-Wall&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-static-libgcc&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-fexec-charset=GBK&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-std=c++11&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;process&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;group&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;build&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;presentation&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;echo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;reveal&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;always&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;focus&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;panel&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;shared&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><br>        <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cppbuild&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;label&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C/C++: g++.exe 生成活动文件&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;D:\\programs\\mingw64\\bin\\g++.exe&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;-fdiagnostics-color=always&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-g&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;$&#123;file&#125;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;-o&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;cwd&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;$&#123;fileDirname&#125;&quot;</span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;problemMatcher&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>                <span class="hljs-string">&quot;$gcc&quot;</span><br>            <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;group&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;kind&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;build&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;isDefault&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><br>            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;detail&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;调试器生成的任务。&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-2f3c90d2" role="button" aria-expanded="false" aria-controls="collapse-2f3c90d2">
+        <div class="fold-arrow">▶</div>del.bat
+      </div>
+      <div class="fold-collapse collapse" id="collapse-2f3c90d2">
+        <div class="fold-content">
+          <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">del</span> *.exe /q /s<br><span class="hljs-built_in">del</span> tempCodeRunnerFile.c /q /s<br><span class="hljs-built_in">del</span> a.out /q /s<br><span class="hljs-built_in">del</span> *.o /q /s<br></code></pre></td></tr></table></figure><p><strong>注意这个文件要在.vscode同级目录下。</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理:"></a>工作原理:</h1><p><strong>使用vscode要先打开一个工作区（文件夹），编写的程序也存放在这个工作区里。</strong>使用文件夹（工作区）存放一个程序项目，原则上一个文件放置一个程序项目（单文件程序可以放多个不同的程序）。在文件夹（工作区）里放置vscode的配置文件，用于配置编程所用语言及运行程序的参数，在用vscode打开文夹时加载配置文件。因此vscode可以使用几乎所有的编程语言，就是靠不同的配置放在文件夹里加以区分。</p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类:"></a>分类:</h1><p>除了上面给出的vscodecpp配置文件，还有其他的配置办法，对应相关用途。这里不再给出。</p>
+<ul>
+<li>1、vscodecpp是写c++</li>
+<li>2、vscodeC是写c<br>这两个写是单文件程序的，多个可以都放在这里边。也可以在里边建立子文件夹。</li>
+<li>3、cpp_project   c++多文件</li>
+<li>4、c_project     c  多文件<br>cpp_project和c_project是写多文件程序的文件来个。一个子文件夹只能放一个多文件项</li>
+</ul>
+<p>注：如果有以前的程序也要把程序移动到有配置文件的文件夹内才能运行。<br>常见错误：<br>1、	打开程序前，没有打开带有配置文件的文件夹；<br>2、	程序没有保存在当前打开的项目文件夹里；<br>3、	程序编写错误导致报错，无法运行；<br>4、	文件保存时误删除扩展名（ .c或是.cpp）；<br>5、	在项目文件夹又建立了下一级文件夹；<br>6、	把程序保存在了配置文件所在的文件夹里（.vsocde）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/dong.github/categories/Practice/" class="category-chain-item">Practice</a>
+  
+  
+    <span>></span>
+    
+  <a href="/dong.github/categories/Practice/Tools/" class="category-chain-item">Tools</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Vscode C/C++编程指南</div>
+      <div>https://cmoments.github.io/dong.github/2024/09/20/Vscodesolutions/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Dong</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 20, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/21/D-talkcom/" title="围观辩论比赛">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">围观辩论比赛</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/dong.github/2024/09/19/linuxsolution/" title="linux使用指南">
+                        <span class="hidden-mobile">linux使用指南</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/dong.github/js/events.js" ></script>
+<script  src="/dong.github/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/dong.github/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/dong.github/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/dong.github/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
